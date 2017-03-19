@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\mozjpeg\jcapimin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcapistd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jccoefct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jccolor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcdctmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcext.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jchuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcinit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcmainct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcmaster.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcomapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcparam.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcphuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcprepct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcsample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jctrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdapimin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdapistd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdatadst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdatasrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdcoefct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdcolor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jddctmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdhuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdinput.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdmainct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdmaster.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdmerge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdphuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdpostct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdsample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdtrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jerror.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jfdctflt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jfdctfst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jfdctint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jidctflt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jidctfst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jidctint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jidctred.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jquant1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jquant2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jutils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jmemmgr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jmemnobs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jaricom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jcarith.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\jdarith.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mozjpeg\simd\jsimd_x86_64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{491C6D89-E379-365A-AECD-A59D998E9D43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ASM Files">
+      <UniqueIdentifier>{A63DFF24-77FE-38AB-BA59-931ADAE23823}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="src\mozjpeg\simd\jfdctflt-sse-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jccolor-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jquanti-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jcgray-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jcsample-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jdcolor-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jdmerge-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jdsample-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jfdctfst-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jfdctint-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jidctflt-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jidctfst-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jidctint-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jidctred-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\jquantf-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
+  </ItemGroup>
+</Project>

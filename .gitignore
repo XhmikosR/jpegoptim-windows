@@ -1,0 +1,10 @@
+# Directories
+/.vs/
+/Tmp/
+/Debug/
+/Release/
+
+# Files
+/*.user
+/jpegoptim.VC.db
+/jpegoptim.VC.VC.opendb

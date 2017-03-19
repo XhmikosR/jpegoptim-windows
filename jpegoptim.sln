@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jpegoptim", "jpegoptim.vcxproj", "{2956D421-01B5-3268-9064-48B7882502D8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A} = {4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mozjpeg", "jpeg-static.vcxproj", "{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2956D421-01B5-3268-9064-48B7882502D8}.Debug|x64.ActiveCfg = Debug|x64
+		{2956D421-01B5-3268-9064-48B7882502D8}.Debug|x64.Build.0 = Debug|x64
+		{2956D421-01B5-3268-9064-48B7882502D8}.Release|x64.ActiveCfg = Release|x64
+		{2956D421-01B5-3268-9064-48B7882502D8}.Release|x64.Build.0 = Release|x64
+		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}.Debug|x64.ActiveCfg = Debug|x64
+		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}.Debug|x64.Build.0 = Debug|x64
+		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}.Release|x64.ActiveCfg = Release|x64
+		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
