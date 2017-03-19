@@ -1,0 +1,7 @@
+[submodule "src/jpegoptim"]
+    path = src/jpegoptim
+    url = https://github.com/tjko/jpegoptim.git
+
+[submodule "src/mozjpeg"]
+    path = src/mozjpeg
+    url = https://github.com/mozilla/mozjpeg.git
