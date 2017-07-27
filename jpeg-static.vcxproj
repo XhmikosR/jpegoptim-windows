@@ -158,6 +158,14 @@
       <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
       <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
     </NASM>
+    <NASM Include="src\mozjpeg\simd\jchuff-sse2-64.asm">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
+      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+    </NASM>
     <NASM Include="src\mozjpeg\simd\jcsample-sse2-64.asm">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>

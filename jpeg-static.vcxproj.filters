@@ -209,5 +209,8 @@
     <NASM Include="src\mozjpeg\simd\jquantf-sse2-64.asm">
       <Filter>ASM Files</Filter>
     </NASM>
+    <NASM Include="src\mozjpeg\simd\jchuff-sse2-64.asm">
+      <Filter>ASM Files</Filter>
+    </NASM>
   </ItemGroup>
 </Project>
