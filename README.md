@@ -1,6 +1,6 @@
 # jpegoptim for Windows
 
-This is just my own project files for easy building of jpegoptim with mozjpeg and MSVC 2015.
+This is just my own project files for easy building of [jpegoptim](https://github.com/tjko/jpegoptim) with [mozjpeg](https://github.com/mozilla/mozjpeg) and MSVC.
 Currently only x64 is targeted.
 
 ## Notes:
@@ -12,7 +12,7 @@ Currently only x64 is targeted.
 ## Build Instructions
 
 1. Clone the repository
-2. Init submodules with `git submodule init` and `git submodule update --recursive`. Alternatively you can use `git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git` when cloning this repository.
-2. Download and install MSVC 2015 (any edition)
+2. Init submodules with `git submodule init` and `git submodule update --recursive`. Alternatively you can use `git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git` when cloning this repository
+2. Download and install MSVC 2017 (any edition)
 3. Place `nasm.exe` somewhere into your `PATH`
 4. Open `jpegoptim.sln` and build
