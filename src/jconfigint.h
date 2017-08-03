@@ -1,5 +1,5 @@
-#define VERSION "3.1"
-#define BUILD "20170318"
+#define VERSION "3.2"
+#define BUILD "20170804"
 #define PACKAGE_NAME "mozjpeg"
 
 #ifndef INLINE
