@@ -89,8 +89,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\mozjpeg\jaricom.c" />
     <ClCompile Include="src\mozjpeg\jcapimin.c" />
     <ClCompile Include="src\mozjpeg\jcapistd.c" />
+    <ClCompile Include="src\mozjpeg\jcarith.c" />
     <ClCompile Include="src\mozjpeg\jccoefct.c" />
     <ClCompile Include="src\mozjpeg\jccolor.c" />
     <ClCompile Include="src\mozjpeg\jcdctmgr.c" />
@@ -108,6 +110,7 @@
     <ClCompile Include="src\mozjpeg\jctrans.c" />
     <ClCompile Include="src\mozjpeg\jdapimin.c" />
     <ClCompile Include="src\mozjpeg\jdapistd.c" />
+    <ClCompile Include="src\mozjpeg\jdarith.c" />
     <ClCompile Include="src\mozjpeg\jdatadst.c" />
     <ClCompile Include="src\mozjpeg\jdatasrc.c" />
     <ClCompile Include="src\mozjpeg\jdcoefct.c" />
@@ -131,144 +134,93 @@
     <ClCompile Include="src\mozjpeg\jidctfst.c" />
     <ClCompile Include="src\mozjpeg\jidctint.c" />
     <ClCompile Include="src\mozjpeg\jidctred.c" />
+    <ClCompile Include="src\mozjpeg\jmemmgr.c" />
+    <ClCompile Include="src\mozjpeg\jmemnobs.c" />
     <ClCompile Include="src\mozjpeg\jquant1.c" />
     <ClCompile Include="src\mozjpeg\jquant2.c" />
     <ClCompile Include="src\mozjpeg\jutils.c" />
-    <ClCompile Include="src\mozjpeg\jmemmgr.c" />
-    <ClCompile Include="src\mozjpeg\jmemnobs.c" />
-    <ClCompile Include="src\mozjpeg\jaricom.c" />
-    <ClCompile Include="src\mozjpeg\jcarith.c" />
-    <ClCompile Include="src\mozjpeg\jdarith.c" />
     <ClCompile Include="src\mozjpeg\simd\jsimd_x86_64.c" />
   </ItemGroup>
   <ItemGroup>
     <NASM Include="src\mozjpeg\simd\jccolor-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jcgray-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jchuff-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jcsample-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jdcolor-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jdmerge-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jdsample-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jfdctflt-sse-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jfdctfst-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jfdctint-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jidctflt-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jidctfst-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jidctint-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jidctred-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jquantf-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
     <NASM Include="src\mozjpeg\simd\jquanti-sse2-64.asm">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">1</Outputswitch>
-      <Outputswitch Condition="'$(Configuration)|$(Platform)'=='Release|x64'">1</Outputswitch>
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
     </NASM>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
