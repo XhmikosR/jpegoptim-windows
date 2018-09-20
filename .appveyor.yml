@@ -1,0 +1,29 @@
+image:
+  - Visual Studio 2017
+
+version: "{build}"
+
+clone_depth: 5
+
+install:
+  - git submodule update --init --recursive
+  - set NASM_VER=2.13.03
+  - set NASM_FNAME_FULL=nasm-%NASM_VER%-win64
+  - set NASM_FNAME=nasm-%NASM_VER%
+  - set NASM_URL=https://www.nasm.us/pub/nasm/releasebuilds/%NASM_VER%/win64/%NASM_FNAME_FULL%.zip
+  - appveyor DownloadFile "%NASM_URL%"
+  - 7z x "%NASM_FNAME_FULL%.zip">NUL
+  - set "PATH=%CD%\%NASM_FNAME%;%PATH%"
+  - nasm -v
+
+build: off
+
+test_script:
+  - call "_build.bat"
+
+artifacts:
+  - path: Release\x64\jpegoptim.exe
+    name: jpegoptim
+
+matrix:
+  fast_finish: true

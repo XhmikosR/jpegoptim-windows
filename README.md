@@ -1,5 +1,7 @@
 # jpegoptim for Windows
 
+[![Build status](https://img.shields.io/appveyor/ci/XhmikosR/jpegoptim-windows/master.svg)](https://ci.appveyor.com/project/XhmikosR/jpegoptim-windows/branch/master)
+
 This is just my own project files for easy building of [jpegoptim](https://github.com/tjko/jpegoptim) with [mozjpeg](https://github.com/mozilla/mozjpeg) and Microsoft Visual Studio.
 Currently only 64-bit (x64) is targeted.
 
