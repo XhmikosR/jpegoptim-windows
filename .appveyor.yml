@@ -19,7 +19,7 @@ install:
 build: off
 
 test_script:
-  - call "_build.bat"
+  - call "build.bat"
 
 artifacts:
   - path: Release\x64\jpegoptim.exe
