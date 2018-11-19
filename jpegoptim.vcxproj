@@ -115,7 +115,7 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ProjectReference Include="jpeg-static.vcxproj">
+    <ProjectReference Include="mozjpeg.vcxproj">
       <Project>{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}</Project>
     </ProjectReference>
   </ItemGroup>

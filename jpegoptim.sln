@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jpegoptim", "jpegoptim.vcxp
 		{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A} = {4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mozjpeg", "jpeg-static.vcxproj", "{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mozjpeg", "mozjpeg.vcxproj", "{4FA20FF7-BCF4-3F4C-8F32-F563F4569B9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
