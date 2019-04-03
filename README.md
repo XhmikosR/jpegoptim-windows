@@ -27,6 +27,6 @@ Currently only 64-bit (x64) is targeted.
   git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git
   ```
 
-2. Download and install [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (any edition)
+2. Download and install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (any edition)
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
 4. Open `jpegoptim.sln` and build
