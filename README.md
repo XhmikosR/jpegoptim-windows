@@ -7,9 +7,9 @@ Currently only 64-bit (x64) is targeted.
 
 ## Notes
 
-* MultiThreaded; no need for the MSVC Runtime to be installed separately
-* Built with LTCG
-* Runs on Vista and newer
+* Multithreaded; no need for the MSVC Runtime to be installed separately
+* Built with [LTCG](https://docs.microsoft.com/en-us/cpp/build/reference/ltcg-link-time-code-generation?view=vs-2019)
+* Runs on Windows Vista and newer
 
 ## Build Instructions
 
@@ -29,4 +29,4 @@ Currently only 64-bit (x64) is targeted.
 
 2. Download and install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (any edition)
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
-4. Open `jpegoptim.sln` and build
+4. Open `jpegoptim.sln` and build or run `build.bat`
