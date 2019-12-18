@@ -14,19 +14,18 @@ Currently only 64-bit (x64) is targeted.
 ## Build Instructions
 
 1. Clone the repository
-2. Init submodules with
+
+  ```shell
+  git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git
+  ```
+
+  Alternatively you can do this:
 
   ```shell
   git submodule init
   git submodule update --recursive
   ```
 
-  Alternatively you can do
-
-  ```shell
-  git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git
-  ```
-
 2. Download and install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (any edition)
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
-4. Open `jpegoptim.sln` and build or run `build.bat`
+4. Open `jpegoptim.sln` and build, or run `build.bat`
