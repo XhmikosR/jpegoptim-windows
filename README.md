@@ -30,12 +30,22 @@ Currently only 64-bit (x64) is targeted.
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
 4. Open `jpegoptim.sln` and build, or run `build.bat`
 
-## Sample script
+## Sample scripts
 
-There's a sample script that loop all the subfolders in a folder optimizing pictures.
+**WARNING**: The following scripts optimize the images in place! Remember to make a backup before running them.
+
+Here's a sample script that loops through only the first-level subfolders in a folder optimizing all pictures:
 
 ```bat
 for /f "tokens=*" %%i in ('dir /a:d /b') do (
-  jpegoptim.exe --preserve --verbose --totals "%%i\*.jpg"    
+  jpegoptim.exe --preserve --strip-all --totals --verbose "%%i\*.jpg"
+)
+```
+
+Here's another sample script that loops through all subfolders in a folder optimizing all pictures:
+
+```bat
+for /f "delims=" %%i in ('dir /b /s *.jpg') do (
+  jpegoptim.exe --preserve --strip-all --verbose "%%i"
 )
 ```
