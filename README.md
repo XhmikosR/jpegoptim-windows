@@ -29,3 +29,13 @@ Currently only 64-bit (x64) is targeted.
 2. Download and install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (any edition)
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
 4. Open `jpegoptim.sln` and build, or run `build.bat`
+
+## Sample script
+
+There's a sample script that loop all the subfolders in a folder optimizing pictures.
+
+```bat
+for /f "tokens=*" %%i in ('dir /a:d /b') do (
+  jpegoptim.exe --preserve --verbose --totals "%%i\*.jpg"    
+)
+```
