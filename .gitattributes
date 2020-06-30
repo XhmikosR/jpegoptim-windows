@@ -1,1 +1,7 @@
-*.bat text eol=crlf
+# Enforce Unix newlines
+* text=auto eol=lf
+
+*.bat eol=crlf
+*.sln eol=crlf
+*.vcxproj eol=crlf
+*.vcxproj.filters eol=crlf
