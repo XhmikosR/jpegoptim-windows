@@ -61,7 +61,7 @@
       HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Output File Name"
       Description="Specify Output Filename.     -o [value]"
-      Switch="-o [value]"
+      Switch="-o &quot;[value]&quot;"
     />
 
     <EnumProperty
