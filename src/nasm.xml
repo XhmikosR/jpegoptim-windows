@@ -58,7 +58,7 @@
   <StringProperty
       Name="OutputFormat"
       Category="Assembler Options"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Output File Name"
       Description="Specify Output Filename.     -o [value]"
       Switch="-o [value]"
@@ -67,7 +67,7 @@
     <EnumProperty
       Name="Outputswitch"
       Category="Assembler Options"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Output Switch"
       Description="Select the type of output format required. Linking should be disabled for ELF and Binary, else error will popup">
       <EnumValue
@@ -94,7 +94,7 @@
     Category="Assembler Options"
     DisplayName="Assembled Code Listing File"
     Description="Generates an assembled code listing file.     (-l [file])"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     Switch="-l &quot;[value]&quot;"
     />
 
@@ -103,14 +103,14 @@
     Category="Assembler Options"
     DisplayName="Generate Debug Information"
     Description="Generates Debug Information.     (-g)"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     Switch="-g"
     />
 
   <StringListProperty
       Name="ErrorReporting"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Redirect Error Messages to File"
       Description="Drops the error Message on specified device"
       Switch="-Z &quot;[value]&quot;"
@@ -121,7 +121,7 @@
     Category="General"
     DisplayName="Include Paths"
     Description="Sets path for include file.     (-I[path])"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     Switch="-I[value]"
 
     />
@@ -129,7 +129,7 @@
     <StringListProperty
     Name="PreprocessorDefinitions"
     Category="Preprocessor"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     DisplayName="Preprocessor Definitions"
     Description="Defines a text macro with the given name.     (-D[symbol])"
     Switch="-D[value]"
@@ -139,7 +139,7 @@
   <StringListProperty
     Name="UndefinePreprocessorDefinitions"
     Category="Preprocessor"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     DisplayName="Undefine Preprocessor Definitions"
     Description="Undefines a text macro with the given name.     (-U[symbol])"
     Switch="-U[value]"
@@ -148,7 +148,7 @@
     <EnumProperty
       Name="ErrorReportingFormat"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Error Reporting Format"
       Description="Select the error reporting format ie. GNU or VC">
       <EnumValue
@@ -166,14 +166,14 @@
     Category="Assembler Options"
     DisplayName="Treat Warnings As Errors"
     Description="Returns an error code if warnings are generated.     (-Werror)"
-    HelpUrl="http://www.nasm.us/doc/"
+    HelpUrl="https://www.nasm.us/doc/"
     Switch="-Werror"
     />
 
     <BoolProperty
       Name="floatunderflow"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="float-underflow"
       Description="floating point underflow (default off)"
       Switch="-w+float-underflow" />
@@ -181,7 +181,7 @@
   <BoolProperty
       Name="macrodefaults"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable macro-defaults"
       Description="macros with more default than optional parameters (default on)"
       Switch="-w-macro-defaults" />
@@ -189,7 +189,7 @@
   <BoolProperty
       Name="user"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable user"
       Description="%warning directives (default on)"
       Switch="-w-user" />
@@ -197,7 +197,7 @@
   <BoolProperty
       Name="floatoverflow"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable float-overflow"
       Description="floating point overflow (default on)"
       Switch="-w-float-overflow" />
@@ -205,7 +205,7 @@
   <BoolProperty
       Name="floatdenorm"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="float-denorm"
       Description="floating point denormal (default off)"
       Switch="-w+float-denorm" />
@@ -213,7 +213,7 @@
   <BoolProperty
       Name="numberoverflow"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable number-overflow"
       Description="numeric constant does not fit (default on)"
       Switch="-w-number-overflow" />
@@ -221,7 +221,7 @@
   <BoolProperty
       Name="macroselfref"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="macro-selfref"
       Description="cyclic macro references (default off)"
       Switch="-w+macro-selfref" />
@@ -229,7 +229,7 @@
   <BoolProperty
       Name="floattoolong"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable float-toolong"
       Description=" too many digits in floating-point number (default on)"
       Switch="-w-float-toolong" />
@@ -237,7 +237,7 @@
   <BoolProperty
       Name="orphanlabels"
       Category="Advanced"
-      HelpUrl="http://www.nasm.us/doc/"
+      HelpUrl="https://www.nasm.us/doc/"
       DisplayName="Disable orphan-labels"
       Description="labels alone on lines without trailing `:' (default on)"
       Switch="-w-orphan-labels" />
