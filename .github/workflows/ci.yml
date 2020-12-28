@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CI: true
+
+jobs:
+  ci:
+    runs-on: windows-latest
+    if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+          # We need to get all git revisions for `git describe` to work
+          fetch-depth: 0
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1
+
+      # TODO: cache this?
+      - name: Set up nasm
+        uses: ilammy/setup-nasm@v1
+        with:
+          version: 2.15.05
+
+      - name: Build
+        run: CALL "build.bat"
+        shell: cmd
+
+      - name: Set Version variable
+        run: echo "JPEGOPTIM_VER=$(git describe --tags --long)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Prepare files
+        run: |
+          mkdir dist
+          cp Release/x64/jpegoptim.exe src/jpegoptim/COPYING src/jpegoptim/COPYRIGHT src/jpegoptim/README dist/
+        shell: bash
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: "jpegoptim-${{ env.JPEGOPTIM_VER }}"
+          path: dist/
+          if-no-files-found: error
