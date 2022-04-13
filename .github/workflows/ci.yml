@@ -40,7 +40,7 @@ jobs:
       - name: Prepare files
         run: |
           mkdir dist
-          cp Release/x64/jpegoptim.exe src/jpegoptim/COPYING src/jpegoptim/COPYRIGHT src/jpegoptim/README dist/
+          cp Release/x64/jpegoptim.exe src/jpegoptim/COPYRIGHT src/jpegoptim/LICENSE src/jpegoptim/README dist/
         shell: bash
 
       - name: Upload binary

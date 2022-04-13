@@ -13,6 +13,9 @@
     <ClCompile Include="src\jpegoptim\jpegoptim.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\jpegoptim\jpegsrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\jpegoptim\misc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
