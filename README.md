@@ -2,7 +2,8 @@
 
 [![Build Status](https://github.com/XhmikosR/jpegoptim-windows/workflows/CI/badge.svg?branch=main)](https://github.com/XhmikosR/jpegoptim-windows/actions?query=workflow%3ACI+branch%3Amain)
 
-This is just my own project files for easy building of [jpegoptim](https://github.com/tjko/jpegoptim) with [mozjpeg](https://github.com/mozilla/mozjpeg) and Microsoft Visual Studio.
+This is just my own project files for easy building of [jpegoptim](https://github.com/tjko/jpegoptim)
+with [mozjpeg](https://github.com/mozilla/mozjpeg) and Microsoft Visual Studio.
 Currently only 64-bit (x64) is targeted.
 
 ## Notes
@@ -15,16 +16,16 @@ Currently only 64-bit (x64) is targeted.
 
 1. Clone the repository
 
-  ```shell
-  git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git
-  ```
+    ```shell
+    git clone --recursive https://github.com/XhmikosR/jpegoptim-windows.git
+    ```
 
-  Alternatively you can do this:
+    Alternatively you can do this:
 
-  ```shell
-  git submodule init
-  git submodule update --recursive
-  ```
+    ```shell
+    git submodule init
+    git submodule update --recursive
+    ```
 
 2. Download and install [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (any edition)
 3. Download [nasm](https://www.nasm.us/) and place `nasm.exe` somewhere into your `PATH`
