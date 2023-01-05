@@ -27,7 +27,7 @@ jobs:
       - name: Set up nasm
         uses: ilammy/setup-nasm@v1
         with:
-          version: 2.15.05
+          version: 2.16.01
 
       - name: Build
         run: CALL "build.bat"
