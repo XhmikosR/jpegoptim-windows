@@ -107,6 +107,7 @@
     <ClCompile Include="src\jpegoptim\getopt.c" />
     <ClCompile Include="src\jpegoptim\getopt1.c" />
     <ClCompile Include="src\jpegoptim\jpegdest.c" />
+    <ClCompile Include="src\jpegoptim\jpegmarker.c" />
     <ClCompile Include="src\jpegoptim\jpegoptim.c" />
     <ClCompile Include="src\jpegoptim\jpegsrc.c" />
     <ClCompile Include="src\jpegoptim\misc.c" />
