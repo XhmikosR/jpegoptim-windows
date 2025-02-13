@@ -9,7 +9,7 @@ Currently only 64-bit (x64) is targeted.
 ## Notes
 
 * Multithreaded; no need for the MSVC Runtime to be installed separately
-* Built with [LTCG](https://docs.microsoft.com/en-us/cpp/build/reference/ltcg-link-time-code-generation?view=msvc-170)
+* Built with [LTCG](https://learn.microsoft.com/en-us/cpp/build/reference/ltcg-link-time-code-generation?view=msvc-170)
 * Runs on Windows Vista and newer
 
 ## Build Instructions
