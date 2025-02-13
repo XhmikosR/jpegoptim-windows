@@ -24,16 +24,16 @@ jobs:
       - name: Add MSVC to PATH
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Set up nasm
+      - name: Set up NASM
         uses: ilammy/setup-nasm@v1
         with:
-          version: 2.16.01
+          version: 2.16.03
 
       - name: Build
         run: CALL "build.bat"
         shell: cmd
 
-      - name: Set Version variable
+      - name: Set version variable
         run: echo "JPEGOPTIM_VER=$(git describe --tags --long)" >> $GITHUB_ENV
         shell: bash
 
