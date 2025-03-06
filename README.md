@@ -1,6 +1,6 @@
 # jpegoptim for Windows
 
-[![Build Status](https://github.com/XhmikosR/jpegoptim-windows/workflows/CI/badge.svg?branch=main)](https://github.com/XhmikosR/jpegoptim-windows/actions?query=workflow%3ACI+branch%3Amain)
+[![Build Status](https://github.com/XhmikosR/jpegoptim-windows/actions/workflows/ci.yml/badge.svg)](https://github.com/XhmikosR/jpegoptim-windows/actions/workflows/ci.yml?query=branch%3Amain)
 
 This is just my own project files for easy building of [jpegoptim](https://github.com/tjko/jpegoptim)
 with [mozjpeg](https://github.com/mozilla/mozjpeg) and Microsoft Visual Studio.
