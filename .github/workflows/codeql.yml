@@ -1,0 +1,53 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches:
+      - "**"
+      - "!dependabot/**"
+  pull_request:
+    branches:
+      - "**"
+      - "!dependabot/**"
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          submodules: true
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@192325c86100d080feab897ff886c34abd4c83a3 # v3.30.3
+        with:
+          languages: "cpp"
+          queries: security-extended,security-and-quality
+
+      - name: Add MSVC to PATH
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
+
+      - name: Set up NASM
+        uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
+        with:
+          version: 2.16.03
+
+      - name: Build
+        run: CALL "build.bat"
+        shell: cmd
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@192325c86100d080feab897ff886c34abd4c83a3 # v3.30.3
+        with:
+          category: "/language:cpp"
