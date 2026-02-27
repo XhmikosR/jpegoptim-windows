@@ -47,5 +47,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: "jpegoptim-${{ env.JPEGOPTIM_VER }}"
-          path: dist/
+          path: ./dist/
           if-no-files-found: error
