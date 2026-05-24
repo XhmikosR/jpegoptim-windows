@@ -21,9 +21,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Add MSVC to PATH
-        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
-
       - name: Set up NASM
         uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
         with:
