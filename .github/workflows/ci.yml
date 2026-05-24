@@ -5,12 +5,16 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 env:
   FORCE_COLOR: 2
 
 jobs:
   build:
     runs-on: windows-latest
+    timeout-minutes: 30
 
     steps:
       - name: Clone repository
@@ -21,13 +25,10 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Add MSVC to PATH
-        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
-
       - name: Set up NASM
         uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
         with:
-          version: 2.16.03
+          version: 3.01
 
       - name: Build
         run: CALL "build.bat"
