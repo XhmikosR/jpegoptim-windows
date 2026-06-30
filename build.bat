@@ -3,6 +3,8 @@ setlocal
 
 cd /d %~dp0
 
+where nasm.exe >nul 2>&1 || (echo ERROR: nasm.exe NOT FOUND in PATH! & goto end)
+
 rem add MSVC in PATH
 call :SubVSPath
 if not exist "%VS_PATH%" echo ERROR: Visual Studio NOT FOUND! & goto end
