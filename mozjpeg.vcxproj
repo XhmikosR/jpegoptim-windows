@@ -56,7 +56,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>WIN32;_WIN64;WIN64;_WINDOWS;_DEBUG;DEBUG;WITH_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN64;WIN64;_WINDOWS;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -76,7 +76,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>WIN32;_WIN64;WIN64;_WINDOWS;NDEBUG;WITH_SIMD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN64;WIN64;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <StringPooling>true</StringPooling>
       <WarningLevel>Level3</WarningLevel>
@@ -95,6 +95,7 @@
     <ClCompile Include="src\mozjpeg\jcdctmgr.c" />
     <ClCompile Include="src\mozjpeg\jcext.c" />
     <ClCompile Include="src\mozjpeg\jchuff.c" />
+    <ClCompile Include="src\mozjpeg\jcicc.c" />
     <ClCompile Include="src\mozjpeg\jcinit.c" />
     <ClCompile Include="src\mozjpeg\jcmainct.c" />
     <ClCompile Include="src\mozjpeg\jcmarker.c" />
@@ -114,6 +115,7 @@
     <ClCompile Include="src\mozjpeg\jdcolor.c" />
     <ClCompile Include="src\mozjpeg\jddctmgr.c" />
     <ClCompile Include="src\mozjpeg\jdhuff.c" />
+    <ClCompile Include="src\mozjpeg\jdicc.c" />
     <ClCompile Include="src\mozjpeg\jdinput.c" />
     <ClCompile Include="src\mozjpeg\jdmainct.c" />
     <ClCompile Include="src\mozjpeg\jdmarker.c" />
@@ -136,87 +138,142 @@
     <ClCompile Include="src\mozjpeg\jquant1.c" />
     <ClCompile Include="src\mozjpeg\jquant2.c" />
     <ClCompile Include="src\mozjpeg\jutils.c" />
-    <ClCompile Include="src\mozjpeg\simd\jsimd_x86_64.c" />
+    <ClCompile Include="src\mozjpeg\simd\x86_64\jsimd.c" />
   </ItemGroup>
   <ItemGroup>
-    <NASM Include="src\mozjpeg\simd\jccolor-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jsimdcpu.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jcgray-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jfdctflt-sse.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jchuff-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jccolor-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jcsample-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jcgray-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jdcolor-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jchuff-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jdmerge-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jcphuff-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jdsample-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jcsample-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jfdctflt-sse-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jdcolor-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jfdctfst-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jdmerge-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jfdctint-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jdsample-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jidctflt-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jfdctfst-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jidctfst-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jfdctint-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jidctint-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jidctflt-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jidctred-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jidctfst-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jquantf-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jidctint-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
-    <NASM Include="src\mozjpeg\simd\jquanti-sse2-64.asm">
+    <NASM Include="src\mozjpeg\simd\x86_64\jidctred-sse2.asm">
       <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <IncludePaths>src\mozjpeg\win\;src\mozjpeg\simd\;%(IncludePaths)</IncludePaths>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jquantf-sse2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jquanti-sse2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jccolor-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jcgray-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jcsample-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jdcolor-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jdmerge-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jdsample-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jfdctint-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jidctint-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
+      <Outputswitch>1</Outputswitch>
+    </NASM>
+    <NASM Include="src\mozjpeg\simd\x86_64\jquanti-avx2.asm">
+      <PreprocessorDefinitions>WIN64;__x86_64__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>src\mozjpeg\simd\nasm\;src\mozjpeg\simd\x86_64\;%(IncludePaths)</IncludePaths>
       <Outputswitch>1</Outputswitch>
     </NASM>
   </ItemGroup>
