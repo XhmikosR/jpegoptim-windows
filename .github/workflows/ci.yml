@@ -28,7 +28,7 @@ jobs:
       - name: Set up NASM
         uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
         with:
-          version: 3.01
+          version: 3.02
 
       - name: Build
         run: CALL "build.bat"
@@ -40,8 +40,8 @@ jobs:
 
       - name: Prepare files
         run: |
-          mkdir dist
-          cp Release/x64/jpegoptim.exe src/jpegoptim/COPYRIGHT src/jpegoptim/LICENSE src/jpegoptim/README dist/
+          mkdir -p "dist/jpegoptim-$JPEGOPTIM_VER"
+          cp Release/x64/jpegoptim.exe src/jpegoptim/COPYRIGHT src/jpegoptim/LICENSE src/jpegoptim/README "dist/jpegoptim-$JPEGOPTIM_VER/"
         shell: bash
 
       - name: Upload binary
@@ -49,4 +49,5 @@ jobs:
         with:
           name: "jpegoptim-${{ env.JPEGOPTIM_VER }}"
           path: dist/
+          compression-level: 9
           if-no-files-found: error
