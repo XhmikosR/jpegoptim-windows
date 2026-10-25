@@ -30,19 +30,23 @@ jobs:
           submodules: true
           persist-credentials: false
 
+      - name: Set up NASM
+        uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
+        with:
+          version: 3.02
+
+      - name: Build mozjpeg outside CodeQL tracing
+        run: CALL "build.bat" mozjpeg
+        shell: cmd
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
         with:
           languages: "cpp,actions"
           config-file: ./.github/codeql/codeql-config.yml
 
-      - name: Set up NASM
-        uses: ilammy/setup-nasm@72793074d3c8cdda771dba85f6deafe00623038b # v1.5.2
-        with:
-          version: 3.02
-
-      - name: Build
-        run: CALL "build.bat"
+      - name: Build jpegoptim
+        run: CALL "build.bat" jpegoptim
         shell: cmd
 
       - name: Perform CodeQL Analysis

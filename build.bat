@@ -13,7 +13,15 @@ call "%VS_PATH%\Common7\Tools\VsDevCmd.bat" -arch=amd64
 
 set "MSBUILD_SWITCHES=/nologo /consoleloggerparameters:Verbosity=minimal /maxcpucount /nodeReuse:true"
 
-MSBuild.exe "jpegoptim.sln" %MSBUILD_SWITCHES% /target:"Rebuild" /property:Configuration="Release";Platform="x64"
+set "BUILD_TARGET=jpegoptim.sln"
+set "BUILD_PROJECT_REFERENCES="
+if /i "%~1"=="mozjpeg" set "BUILD_TARGET=mozjpeg.vcxproj"
+if /i "%~1"=="jpegoptim" (
+	set "BUILD_TARGET=jpegoptim.vcxproj"
+	set "BUILD_PROJECT_REFERENCES=/property:BuildProjectReferences=false"
+)
+
+MSBuild.exe "%BUILD_TARGET%" %MSBUILD_SWITCHES% /target:"Rebuild" /property:Configuration="Release";Platform="x64" %BUILD_PROJECT_REFERENCES%
 
 :end
 endlocal
